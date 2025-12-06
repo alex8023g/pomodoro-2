@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div
-      className='bg-[#50a6d9] overflow-clip relative rounded-[32px] size-full max-w-[450px] max-h-[800px] mx-auto bg-[url(/group9.png)] bg-cover bg-center'
+      className='bg-[#50a6d9] overflow-clip relative /rounded-[32px] size-full max-w-[450px] max-h-[800px] mx-auto bg-[url(/group9.png)] bg-cover bg-center'
       data-name='Mainscreen 1'
       data-node-id='2:2'
     >
