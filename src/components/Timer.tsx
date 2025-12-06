@@ -1,8 +1,9 @@
 // Image assets from Figma
+import { Circle } from "./Circle";
 const imgFrame3 =
-  'https://www.figma.com/api/mcp/asset/1f3ac54b-05a5-4537-8107-bbf2b0dd6c10';
+  "https://www.figma.com/api/mcp/asset/1f3ac54b-05a5-4537-8107-bbf2b0dd6c10";
 const imgEllipse4 =
-  'https://www.figma.com/api/mcp/asset/a3a3f2e3-c5a6-4088-ae16-4d7741fc4cd3';
+  "https://www.figma.com/api/mcp/asset/a3a3f2e3-c5a6-4088-ae16-4d7741fc4cd3";
 
 type TimerProps = {
   className?: string;
@@ -10,27 +11,29 @@ type TimerProps = {
 };
 
 function Timer({ className, time }: TimerProps) {
+  const radius = 110;
+  const circumference = 2 * Math.PI * radius;
+  // const progress = ((duration - timeLeft) / duration) * circumference;
+  const progress = 740;
+  const strokeDasharray = circumference - progress;
   return (
     <div
-      className={className || 'relative size-full'}
-      data-name='Property 1=pomo'
-      data-node-id='4:771'
+      // className={className || "relative size-full"}
+      className="absolute left-[55px] top-[240px] size-[316px]"
+      data-name="Property 1=pomo"
+      data-node-id="4:771"
     >
-      <div className='absolute left-0 size-[316px] top-0' data-node-id='4:571'>
-        <div className='absolute inset-[-17.41%]'>
-          <img alt='' className='block max-w-none size-full' src={imgFrame3} />
+      <div className="absolute left-3 top-0 size-[316px]" data-node-id="4:571">
+        <div className="absolute inset-[-17.41%]">
+          <img alt="" className="block size-full max-w-none" src={imgFrame3} />
         </div>
       </div>
-      <div className='absolute left-[25px] size-[266px] top-[25px]' data-node-id='4:568'>
-        <div className='absolute bottom-0 left-[0.04%] right-0 top-[0.04%]'>
-          <img alt='' className='block max-w-none size-full' src={imgEllipse4} />
-        </div>
-      </div>
+      <Circle />
       <div
-        className='absolute flex flex-col font-poppins h-[66px] justify-center leading-[0] left-[158px] not-italic text-[64px] text-center text-white top-[158px] translate-x-[-50%] translate-y-[-50%] w-[180px]'
-        data-node-id='4:569'
+        className="absolute left-[172px] top-[158px] flex h-[66px] w-[180px] translate-x-[-50%] translate-y-[-50%] flex-col justify-center text-center font-poppins text-[64px] not-italic leading-[0] text-white"
+        data-node-id="4:569"
       >
-        <p className='leading-[normal] whitespace-pre-wrap'>{time}</p>
+        <p className="whitespace-pre-wrap leading-[normal]">{time}</p>
       </div>
     </div>
   );
